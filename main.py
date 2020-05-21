@@ -5,12 +5,12 @@ import pyautogui
 
 def go(target):
     if target == 'battle':
-        pyautogui.moveTo(1123, 1145, duration=-1000)
+        pyautogui.moveTo(battleX, battleY, duration=-1000)
         pyautogui.click()
     elif target == 'duel':
-        pyautogui.moveTo(876, 1144, duration=-1000)
+        pyautogui.moveTo(duelX, duelY, duration=-1000)
     elif target == 'ad':
-        pyautogui.moveTo(400, 840, duration=-1000)
+        pyautogui.moveTo(adX, adY, duration=-1000)
 
 
 def getBall(round, id):
@@ -19,8 +19,8 @@ def getBall(round, id):
 
 def pokemon_go(round, id):
     x, y = getBall(round, id)
-    pyautogui.moveTo(x, y)
-    pyautogui.drag(0, -100, button = 'left', duration = 0.5)
+    pyautogui.moveTo(x, y, duration=-1000)
+    pyautogui.drag(0, throw_ball, button = 'left')
 
 def battle():
     go('battle')
