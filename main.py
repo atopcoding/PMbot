@@ -1,5 +1,6 @@
 import time
 import pyautogui
+import init
 
 def go(target):
     if target == 'battle':
@@ -63,10 +64,11 @@ def pokemon_go(round, id):
     pyautogui.mouseUp()
 
 def battle():
+    init.screen_size()
     go('battle')
     time.sleep(15)
-    pokemon_go(1,4)
+    pokemon_go(1, 4)
     time.sleep(15)
-    pokemon_go(2,1)
+    pokemon_go(2, 1)
     time.sleep(15)
-    pokemon_go(3,2)
+    pokemon_go(3, 2)
