@@ -7,4 +7,4 @@ def screen_size():
 	print(screenWidth, screenHeight)
 	pyautogui.moveTo(screenWidth - 1, screenHeight - 1)
 	pyautogui.click()
-	pyautogui.dragTo(1000, 1000, button = 'left', duration= 2)
+	pyautogui.dragTo(1000, 1000, button = 'left')
