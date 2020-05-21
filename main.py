@@ -4,71 +4,33 @@ import init
 
 def go(target):
     if target == 'battle':
-        pyautogui.moveTo(1123, 1145, duration=-1000)
+        pyautogui.moveTo(500, 780, duration=-1000)
         pyautogui.mouseDown()
         pyautogui.mouseUp()
     if target == 'duel':
         pyautogui.moveTo(876, 1144, duration=-1000)
 
-def pokemon_go(round, id):
-    if round == 1:
-        if id == 1:
-            pyautogui.moveTo( 892, 1277, duration=-1000)
-        elif id == 2:
-            pyautogui.moveTo( 986, 1277, duration=-1000)
-        elif id == 3:
-            pyautogui.moveTo(1075, 1277, duration=-1000)
-        elif id == 4:
-            pyautogui.moveTo(1172, 1277, duration=-1000)
-        elif id == 5:
-            pyautogui.moveTo(1266, 1277, duration=-1000)
-        elif id == 6:
-            pyautogui.moveTo(1360, 1277, duration=-1000)
-    if round == 2:
-        if id == 1:
-            pyautogui.moveTo( 941, 1277, duration=-1000)
-        elif id == 2:
-            pyautogui.moveTo(1031, 1277, duration=-1000)
-        elif id == 3:
-            pyautogui.moveTo(1123, 1277, duration=-1000)
-        elif id == 4:
-            pyautogui.moveTo(1217, 1277, duration=-1000)
-        elif id == 5:
-            pyautogui.moveTo(1313, 1277, duration=-1000)
-    if round == 3:
-        if id == 1:
-            pyautogui.moveTo( 991, 1277, duration=-1000)
-        elif id == 2:
-            pyautogui.moveTo( 1079, 1277, duration=-1000)
-        elif id == 3:
-            pyautogui.moveTo(1177, 1277, duration=-1000)
-        elif id == 4:
-            pyautogui.moveTo(1269, 1277, duration=-1000)
-    if round == 4:
-        if id == 1:
-            pyautogui.moveTo(1031, 1277, duration=-1000)
-        elif id == 2:
-            pyautogui.moveTo(1123, 1277, duration=-1000)
-        elif id == 3:
-            pyautogui.moveTo(1217, 1277, duration=-1000)
-    if round == 5:
-        if id == 1:
-            pyautogui.moveTo( 1079, 1277, duration=-1000)
-        elif id == 2:
-            pyautogui.moveTo( 1177, 1277, duration=-1000)
-    if round == 6:
-        if id == 1:
-            pyautogui.moveTo( 1075, 1277, duration=-1000)
-    pyautogui.mouseDown()
-    pyautogui.moveTo(1124, 1002, duration=-1000)
-    pyautogui.mouseUp()
+def getBall(round, ball):
+	ballnum = 7 - round
+	return (500 + (ball - (ballnum + 1) / 2) * 60, 870)
+
+def pokemon_go(r, b):
+	x, y = getBall(r, b)
+	pyautogui.moveTo(x, y)
+	pyautogui.click()
+	pyautogui.click()
+	pyautogui.drag(0, -200, button='left')
 
 def battle():
     init.screen_size()
     go('battle')
-    time.sleep(15)
+    time.sleep(20)
     pokemon_go(1, 4)
-    time.sleep(15)
+    time.sleep(20)
     pokemon_go(2, 1)
-    time.sleep(15)
+    time.sleep(20)
     pokemon_go(3, 2)
+    time.sleep(20)
+    pokemon_go(4, 3)
+    time.sleep(20)
+    pokemon_go(5, 2)
