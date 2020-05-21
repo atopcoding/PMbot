@@ -1,4 +1,5 @@
 import time
+from PIL import
 from variables import *
 import pyautogui
 
@@ -19,7 +20,7 @@ def getBall(round, id):
 def pokemon_go(round, id):
     x, y = getBall(round, id)
     pyautogui.moveTo(x, y)
-    pyautogui.drag(0, -100, button = 'left')
+    pyautogui.drag(0, -100, button = 'left', duration = 0.5)
 
 def battle():
     go('battle')
@@ -32,3 +33,5 @@ def battle():
     print("Going to do move")
     time.sleep(20)
     pokemon_go(3,2)
+
+def watch_ad
