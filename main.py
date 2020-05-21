@@ -1,4 +1,5 @@
 import time
+from PIL import
 from variables import *
 import pyautogui
 
@@ -32,3 +33,5 @@ def battle():
     print("Going to do move")
     time.sleep(20)
     pokemon_go(3,2)
+
+def watch_ad
