@@ -1,5 +1,5 @@
 import time
-from PIL import
+from PIL import ImageGrab
 from variables import *
 import pyautogui
 
