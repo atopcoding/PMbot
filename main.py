@@ -4,9 +4,8 @@ import pyautogui
 def go(target):
     if target == 'battle':
         pyautogui.moveTo(1123, 1145, duration=-1000)
-        pyautogui.mouseDown()
-        pyautogui.mouseUp()
-    if target == 'duel':
+        pyautogui.click()
+    elif target == 'duel':
         pyautogui.moveTo(876, 1144, duration=-1000)
 
 def pokemon_go(round, id):

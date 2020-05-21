@@ -12,12 +12,3 @@ def getBall(round, ball):
 	return (500 + (ball - (ballnum + 1) / 2) * 60, 870)
 
 
-def go():
-	r = int(input())
-	b = int(input())
-	x, y = getBall(r, b)
-	pyautogui.moveTo(x, y)
-	pyautogui.click()
-	pyautogui.click()
-	pyautogui.drag(0, -200, button = 'left')
-	
